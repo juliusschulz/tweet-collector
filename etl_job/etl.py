@@ -8,11 +8,11 @@ import pandas as pd
 
 
 def extract_new_tweets():
-   """
-   - compare #entries to last run
-   - look at the keys/ids of documents
-   - look at timestamps
-   """
+    """
+    - compare #entries to last run
+    - look at the keys/ids of documents
+    - look at timestamps
+    """
    client = pymongo.MongoClient(host="mongodb", port=27017)
    tweet = client.tweet
    tweets = tweet.tweet
@@ -60,12 +60,13 @@ def write_to_sql(x):
 
 
 while True:
-#    try:
+    # try:
     print('running')
-    pg = create_engine("postgres://postgres:postgres@postgresdb:5432/tweetdb")  # rather than 5555
+    # rather than 5555
+    pg = create_engine("postgres://postgres:postgres@postgresdb:5432/tweetdb")
     x = extract_new_tweets()
     time.sleep(10)
     x = transform_data(x)
     write_to_sql(x)
-    #except Exception, e:
-        #logging.critical('ERROR' + str(e))
+    # except Exception, e:
+        # logging.critical('ERROR' + str(e))
