@@ -1,22 +1,21 @@
 '''
-The purpose of this script is to build upon the twitter_streamer.py script --
-by importing its TwitterStreamer class and loading the collected, streamed tweets
+This script is to build upon the twitter_streamer.py script --
+by importing its TwitterStreamer class and loading the collected, put tweets
 into a MongoDB database.
 '''
 
 import argparse
 import pymongo
-import config
 from twitter_collection_pro import TwitterStreamer
 
 client = pymongo.MongoClient(host="mongodb", port=27017)
 tweet = client.tweet
 tweets = tweet.tweet
 
-#create a Mongo database called twitter_data
+# create a Mongo database called twitter_data
+
 
 class LoadDatabase():
-
 
     def __init__(self, batch_size, limit):
         self.batch_size = batch_size
@@ -26,24 +25,25 @@ class LoadDatabase():
 
     def load_tweets(self, tweet):
         '''
-            The primary method to be used as the callback function on each
-            incoming tweet. Each tweet is appended to an empty list (the "buffer")
-            and as soon as this buffer is full (i.e. has reached the batch size),
-            the tweets are dumped into Mongo DB.
+        The primary method to be used as the callback function on each
+        incoming tweet. Each tweet is appended to an empty list (the "buffer")
+        and as soon as this buffer is full (i.e. has reached the batch size),
+        the tweets are dumped into Mongo DB.
         '''
         self.buffer.append(tweet)
 
-        #logic for handling if batch size > limit and if limit % batch_size != 0
+    # logic for handling if batch_size > limit and if limit % batch_size != 0
         if self.limit - self.counter < self.batch_size:
             self.batch_size = self.limit - self.counter
 
-        #main block
+        # main block
         if len(self.buffer) >= self.batch_size:
             tweets.insert_many(self.buffer)
             print(f"loaded {int(self.counter + self.batch_size)} tweets of\
             {int(self.limit)}\n")
             self.buffer = []
             self.counter += self.batch_size
+
 
 def populate_database(batch_size, limit, keywords):
 
@@ -59,9 +59,7 @@ def populate_database(batch_size, limit, keywords):
     twitter_streamer.stream_tweets(limit, callback_function)
 
 
-
-
-if __name__ =='__main__':
+if __name__ == '__main__':
     """
     To view argument parser help in the command line:
     'python load_database.py -h'
@@ -70,21 +68,24 @@ if __name__ =='__main__':
     into a database.')
 
     parser.add_argument('-k', '--keyword_list',
-                         nargs='+',
-                         help='<Required> Enter any keywords (separated by spaces;\
-                         no punctuation) that should be included in streamed tweets.',
-                         default= ['@BernieSanders', '#BernieBeatsTrump', 'Bernie Sanders',
-                         '#BernieSanders2020', '#Bernie2020', 'Bernie'])
+                        nargs='+',
+                        help='<Required> Enter keywords (separated by spaces;\
+                        no punctuation) that should\
+                        be included in streamed tweets.',
+                        default=['@BernieSanders', '#BernieBeatsTrump',
+                                 'Bernie Sanders',
+                                 '#BernieSanders2020', '#Bernie2020',
+                                 'Bernie'])
 
     parser.add_argument('-b', '--batch_size',
-                         type=int,
-                         default=2,
-                         help='How many tweets do you want to grab at a time?')
+                        type=int,
+                        default=2,
+                        help='How many tweets do you want to grab at a time?')
 
     parser.add_argument('-n', '--total_number',
-                         type=int,
-                         default=1_000_000,
-                         help='How many total tweets do you want to get?')
+                        type=int,
+                        default=1_000_000,
+                        help='How many total tweets do you want to get?')
 
     args = parser.parse_args()
 

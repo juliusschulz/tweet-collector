@@ -1,22 +1,23 @@
 import slack
 from sqlalchemy import create_engine
 import time
-import pandas as pd
-from passwords import slack_token
+from passwords import SLACK_TOKEN
 
-oauth_token = slack_token
+oauth_token = SLACK_TOKEN
+
 
 def slack_text(slack_message):
     client = slack.WebClient(token=oauth_token)
-    #def slack_text(slack_message):
+    # def slack_text(slack_message):
     response = client.chat_postMessage(channel='#random', text=slack_message)
+    return response
 
 
 def get_text():
-    HOST= 'postgresdb'
-    PORT= '5432'
-    USERNAME= 'postgres'
-    PASSWORD= 'postgres'
+    HOST = 'postgresdb'
+    PORT = '5432'
+    USERNAME = 'postgres'
+    PASSWORD = 'postgres'
     DB = 'tweetdb'
     conn_string = f'postgres://{USERNAME}:{PASSWORD}@{HOST}:{PORT}/{DB}'
 
