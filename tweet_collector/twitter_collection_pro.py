@@ -163,9 +163,10 @@ class TwitterListener(StreamListener):
         '''
 
         t = json.loads(data)
-
-        is_tweet_reply = t['in_reply_to_status_id'] == None
-        is_quote = t['is_quote_status'] == False
+        if t['in_reply_to_status_id'] is None:
+            t['in_reply_to_status_id'] = is_tweet_reply
+        if t['is_quote_status'] is False:
+            t['is_quote_status'] = is_quote
 
         if 'RT' not in t['text'] and is_tweet_reply and is_quote:
 
