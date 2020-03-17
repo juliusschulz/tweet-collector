@@ -21,7 +21,7 @@ from tweepy import OAuthHandler, Stream
 from tweepy.streaming import StreamListener
 import pymongo
 import config
-import passwords
+from passwords import *
 
 client = pymongo.MongoClient()
 tweet = client.tweet
@@ -118,10 +118,10 @@ class TwitterAuthenticator():
         """Use tweepy's built-in OAuthHandler
         class to return authentication object.
         """
-        auth = OAuthHandler("og8QYT8YBJeHSz1yNLP7BiAZb", "NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg")
-        auth.set_access_token("721337135161352192-4iXqDquXow8XuZPdB8f1rDj9bnXm895", "wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8")
-
+        auth = OAuthHandler(CONSUMER_API_KEY, CONSUMER_API_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
         return auth
+
 
 class TwitterListener(StreamListener):
 
@@ -131,7 +131,7 @@ class TwitterListener(StreamListener):
     '''
 
     def __init__(self, limit, callback):
-        super().__init__() # Inherit __init__ method from parent class.
+        super().__init__()  # Inherit __init__ method from parent class.
         self.limit = limit
         self.counter = 0
         self.callback = callback
@@ -176,6 +176,7 @@ class TwitterListener(StreamListener):
 
             if self.counter == self.limit:
                 return False
+
 
 class TwitterStreamer():
     '''
