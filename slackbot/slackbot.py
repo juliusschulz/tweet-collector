@@ -2,8 +2,9 @@ import slack
 from sqlalchemy import create_engine
 import time
 import pandas as pd
+from passwords import slack_token
 
-oauth_token =
+oauth_token = slack_token
 
 def slack_text(slack_message):
     client = slack.WebClient(token=oauth_token)
