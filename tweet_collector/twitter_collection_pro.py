@@ -21,6 +21,7 @@ from tweepy import OAuthHandler, Stream
 from tweepy.streaming import StreamListener
 import pymongo
 import config
+import passwords
 
 client = pymongo.MongoClient()
 tweet = client.tweet
@@ -28,10 +29,11 @@ tweet = tweet.tweet
 
 LANGUAGES = ['en']
 
+
 def get_geo_data(tweet):
 
     geo_data = []
-    if tweet['place'] != None:
+    if tweet['place'] is not None:
         try:
             geo_data.append(tweet['place']['full_name'])
             geo_data.append(tweet['place']['bounding_box']['coordinates'])
@@ -40,6 +42,7 @@ def get_geo_data(tweet):
 
     return geo_data
 
+
 def get_user_location(tweet):
 
     '''Function that extracts location of the user / author of each tweet,
@@ -47,13 +50,14 @@ def get_user_location(tweet):
     '''
 
     user_location = []
-    if tweet['user']['location'] != None:
+    if tweet['user']['location'] is not None:
         try:
             user_location.append(tweet['user']['location'])
         except KeyError:
             user_location.append(['KeyError'])
 
     return user_location
+
 
 def get_hashtags(tweet):
 
@@ -65,10 +69,12 @@ def get_hashtags(tweet):
     if 'extended_tweet' in tweet:
         for hashtag in tweet['extended_tweet']['entities']['hashtags']:
             hashtags.append(hashtag['text'])
-    elif 'hashtags' in tweet['entities'] and len(tweet['entities']['hashtags']) > 0:
+    elif 'hashtags' in tweet['entities']\
+            and len(tweet['entities']['hashtags']) > 0:
         hashtags = [item['text'] for item in tweet['entities']['hashtags']]
 
     return hashtags
+
 
 def get_tweet_dict(tweet):
 
@@ -93,7 +99,7 @@ def get_tweet_dict(tweet):
              'source': tweet['source'],
              'language': tweet['lang'],
              'user_description': tweet['user']['description'],
-             'num_followers':tweet['user']['followers_count'],
+             'num_followers': tweet['user']['followers_count'],
              'user_statuses': tweet['user']['statuses_count'],
              'user_created_at': tweet['user']['created_at'],
              'hashtags': hashtags,
@@ -102,14 +108,15 @@ def get_tweet_dict(tweet):
              }
     return tweet
 
+
 class TwitterAuthenticator():
 
     """Class, whose sole purpose is to provide authentication to use
        the Twitter API.
     """
     def authenticate(self):
-        """
-        Use tweepy's built-in OAuthHandler class to return authentication object.
+        """Use tweepy's built-in OAuthHandler
+        class to return authentication object.
         """
         auth = OAuthHandler("og8QYT8YBJeHSz1yNLP7BiAZb", "NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg")
         auth.set_access_token("721337135161352192-4iXqDquXow8XuZPdB8f1rDj9bnXm895", "wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8")
@@ -144,9 +151,11 @@ class TwitterListener(StreamListener):
 
         '''DEFAULT method inherited from StreamListener class.
            This is the main function of the Twitter Streamer class.
-           It defines what should be done with each incoming streamed tweet as it
+           It defines what should be done with each incoming streamed tweet
+           as it
            is intercepted by the StreamListener:
-           - convert each json-like string from twitter into a workable JSON object;
+           - convert each json-like string from twitter into a workable JSON
+                object;
            - ignore retweets, replies, and quoted tweets;
            - apply the get_tweet_dict function to each object;
            - apply a callback function to the resulting dictionary;
