@@ -1,4 +1,6 @@
-import logging
+"""Etl-job: Extract tweets from the MongoDB cleans preprocess it and stores
+them in an SQL Database """
+
 import time
 import pymongo
 from sqlalchemy import create_engine
