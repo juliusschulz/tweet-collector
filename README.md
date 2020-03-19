@@ -1,2 +1,2 @@
 # tweet-collector
-A Python programm that collects tweets and store them in an SQL Database
+A Dockerized Data Pipeline that analyzes the sentiment of tweets.
