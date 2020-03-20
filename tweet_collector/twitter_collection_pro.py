@@ -22,6 +22,7 @@ from tweepy.streaming import StreamListener
 import pymongo
 from passwords import *
 
+
 client = pymongo.MongoClient()
 tweet = client.tweet
 tweet = tweet.tweet
