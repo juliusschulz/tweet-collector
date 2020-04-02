@@ -5,5 +5,7 @@ A Dockerized Data Pipeline that analyzes the sentiment of tweets.
 ![pipeline_structure](pipeline_structure.png)
 
 
-To Do:
-- 
+## Usage
+`docker-compose build`
+`docker-compose up`
+-
