@@ -13,3 +13,11 @@ docker-compose up
 ```
 
 ## Main components
+1. tweet-collector
+     - collect tweets with certain hashtags and store them in a MongoDB
+2. etl-job
+     - extract tweets from MongoDB
+     - add sentiment analysis
+     - store cleaned tweets in an SQL Database
+3. slackbot
+     - grab tweets from SQL Database that can be posted on slack
