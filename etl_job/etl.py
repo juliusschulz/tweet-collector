@@ -1,5 +1,7 @@
-"""Etl-job: Extract tweets from the MongoDB cleans preprocess it and stores
-them in an SQL Database """
+"""
+Etl-job: Extract tweets from the MongoDB cleans preprocess it and stores
+them in an SQL Database
+"""
 
 import time
 import pymongo
@@ -15,12 +17,13 @@ def extract_new_tweets():
     - look at the keys/ids of documents
     - look at timestamps
     """
-   client = pymongo.MongoClient(host="mongodb", port=27017)
-   tweet = client.tweet
-   tweets = tweet.tweet
-   tweet_list = [tweet for tweet in tweets.find({"tweet_location":{"$exists": "true", "$ne": [] }})]
-   tweets.drop()
-   return tweet_list
+    client = pymongo.MongoClient(host="mongodb", port=27017)
+    tweet = client.tweet
+    tweets = tweet.tweet
+    tweet_list = [tweet for tweet in tweets.find({"tweet_location": {"$exists": "true", "$ne": []}})]
+    tweets.drop()
+    return tweet_list
+
 
 def transform_data(tweet):
     """
