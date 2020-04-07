@@ -20,7 +20,7 @@ import json
 from tweepy import OAuthHandler, Stream
 from tweepy.streaming import StreamListener
 import pymongo
-from passwords import *
+#from passwords import *
 
 
 client = pymongo.MongoClient()
