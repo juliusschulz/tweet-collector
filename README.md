@@ -1,9 +1,11 @@
 # tweet-collector
+
+[![Build Status](https://travis-ci.org/juliusschulz/tweet-collector.svg?branch=master)](https://travis-ci.org/juliusschulz/tweet-collector)
+
 A Dockerized Data Pipeline that analyzes the sentiment of tweets.
 
 
 ![pipeline_structure](pipeline_structure.png)
-[![Build Status](https://travis-ci.org/juliusschulz/tweet-collector.svg?branch=master)](https://travis-ci.org/juliusschulz/tweet-collector)
 
 ## Usage
 ```
