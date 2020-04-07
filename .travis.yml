@@ -1,9 +1,24 @@
+# language: python
+# python:
+#   - "3.6"
+# # command to install dependencies
+# install:
+#   - pip install -r requirements.txt
+# # command to run tests
+# script:
+# - pytest
+
+
 language: python
-python:
-  - "3.6"
-# command to install dependencies
-install:
-  - pip install -r requirements.txt
-# command to run tests
+
+services:
+  - docker
+
+before_install:
+  - docker build -t carlad/sinatra .
+  - docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
+  - docker ps -a
+  - docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
+
 script:
-- pytest
+  - bundle exec rake test
