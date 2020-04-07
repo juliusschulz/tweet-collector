@@ -24,7 +24,9 @@ def get_text():
     engine = create_engine(conn_string)
     query = "SELECT text FROM tweets LIMIT 1;"
     result = engine.execute(query)
-    return result[0]
+    for tweet in result:
+        print(tweet)
+    return tweet[0]
 
 
 while True:
