@@ -1,10 +1,10 @@
-import time
-import pymongo
-from sqlalchemy import create_engine
-from pymongo import MongoClient
-from vaderSentiment.vaderSentiment import SentimentIntensityAnalyze
-import etl_job
-import pandas as pd
+# import time
+# import pymongo
+# from sqlalchemy import create_engine
+# from pymongo import MongoClient
+# from vaderSentiment.vaderSentiment import SentimentIntensityAnalyze
+# import etl_job
+# import pandas as pd
 
 
 # def test_extract_new_tweets():
