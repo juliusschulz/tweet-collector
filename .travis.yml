@@ -1,31 +1,12 @@
-# language: python
-# python:
-#   - "3.6"
-# # command to install dependencies
-# install:
-#   - pip install -r requirements.txt
-# # command to run tests
-# script:
-# - pytest
-
-
 language: python
-
 services:
-  - docker
-
+- docker
 before_install:
-  - docker-compose build
-  - docker-compose up
+- docker-compose build
+- docker-compose up
 env:
   global:
-    - secure: ACCESS_TOKEN='721337135161352192-4iXqDquXow8XuZPdB8f1rDj9bnXm895'
-    - secure: CONSUMER_API_KEY='og8QYT8YBJeHSz1yNLP7BiAZb'
-    - secure: CONSUMER_API_SECRET='NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg'
-    - secure: ACCESS_TOKEN_SECRET='wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8'
+  - secure: a2JmfAtUiaZiMXhKPWc1IkiO4H7hmAf8J4k8y0/7BklDVVYCqcdAWhGjCHXq6mRNw3uUJKElTIEG2+/3ACAAO5o8pscxFe9Ppnmvat1C1gO2qKsmv1NR9ZVo6ER3eu+OJUZFmzks01wPVv5jB8Xt/wdhAXCHoi3KWGV42+yetudeL4/jVRHMhfRQ6QXlQ6jrVKCjOyjNqZnsD+Oh3MKaM5Xpj3yKhf+61kGb14sj6T3IJDyaDKS2FuJ01S24U1R59g0b0i9v1QnPf+RIK0Gu6bZGhEOjYiBKAcmI5EFGnSoishU6e2zuZ0yKNoIA95ojIJSPw4qsnSmAFBCFWvbLFJCIHw/K2/zq+b3riQOv8qMNh7gtC4YNdaIaki8zbOinvcUsIA1tRdnpazgL9f0Qy7BiE+5cuCm4cYnHJxDHxOgyw+gX9mnd3SlaxZNkSYY7tqZ+bsMqPaX9mazgV2x58HUjTWzP/PI5gse9N0bPg7vU5FnbCBH0hgloLvrXajTXqxlCzh5+e2lLF4FYjtNKzqEZ8dELMqzZmiNUvA/74EgLmMiMqG1EsOY/Z37i0B7UH4FDzsRE2y9kKzXzLyr++hwAavDdkbVYiuC/Uyo/ybrGwS/4vLMXy+I9w4RvCd96ulhDz6TceQ2Kg+oLIllhs9gRqyACEedtcnhHTu1mnp0=
   jobs:
   - USE_NETWORK=true
   - USE_NETWORK=false
-
-# script:
-#   - bundle exec rake test
