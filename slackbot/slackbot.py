@@ -1,10 +1,9 @@
 import slack
 from sqlalchemy import create_engine
 import time
-#from passwords import SLACK_TOKEN
+from passwords import SLACK_TOKEN
 
-# oauth_token = SLACK_TOKEN
-oauth_token = "xoxb-892207304208-960672730260-i65JRK74l36YAQYJDQvQ72bk"
+oauth_token = SLACK_TOKEN
 
 
 def slack_text(slack_message):
