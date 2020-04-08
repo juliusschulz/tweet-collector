@@ -6,7 +6,48 @@ before_install:
 - docker-compose up
 env:
   global:
-  - secure: a2JmfAtUiaZiMXhKPWc1IkiO4H7hmAf8J4k8y0/7BklDVVYCqcdAWhGjCHXq6mRNw3uUJKElTIEG2+/3ACAAO5o8pscxFe9Ppnmvat1C1gO2qKsmv1NR9ZVo6ER3eu+OJUZFmzks01wPVv5jB8Xt/wdhAXCHoi3KWGV42+yetudeL4/jVRHMhfRQ6QXlQ6jrVKCjOyjNqZnsD+Oh3MKaM5Xpj3yKhf+61kGb14sj6T3IJDyaDKS2FuJ01S24U1R59g0b0i9v1QnPf+RIK0Gu6bZGhEOjYiBKAcmI5EFGnSoishU6e2zuZ0yKNoIA95ojIJSPw4qsnSmAFBCFWvbLFJCIHw/K2/zq+b3riQOv8qMNh7gtC4YNdaIaki8zbOinvcUsIA1tRdnpazgL9f0Qy7BiE+5cuCm4cYnHJxDHxOgyw+gX9mnd3SlaxZNkSYY7tqZ+bsMqPaX9mazgV2x58HUjTWzP/PI5gse9N0bPg7vU5FnbCBH0hgloLvrXajTXqxlCzh5+e2lLF4FYjtNKzqEZ8dELMqzZmiNUvA/74EgLmMiMqG1EsOY/Z37i0B7UH4FDzsRE2y9kKzXzLyr++hwAavDdkbVYiuC/Uyo/ybrGwS/4vLMXy+I9w4RvCd96ulhDz6TceQ2Kg+oLIllhs9gRqyACEedtcnhHTu1mnp0=
+    - secure: a2JmfAtUiaZiMXhKPWc1IkiO4H7hmAf8J4k8y0/7BklDVVYCqcdAWhGjCHXq6mRNw3
+    uUJKElTIEG2+/3ACAAO5o8pscxFe9Ppnmvat1C1gO2qKsmv1NR9ZVo6ER3eu+OJUZFm
+    zks01wPVv5jB8Xt/wdhAXCHoi3KWGV42+yetudeL4/jVRHMhfRQ6QXlQ6jrVKCjOyjNq
+    ZnsD+Oh3MKaM5Xpj3yKhf+61kGb14sj6T3IJDyaDKS2FuJ01S24U1R59g0b0i9v1QnPf+RIK0Gu
+    6bZGhEOjYiBKAcmI5EFGnSoishU6e2zuZ0yKNoIA95ojIJSPw4qsnSmAFBCFWvbLFJCIHw/K2/z
+    q+b3riQOv8qMNh7gtC4YNdaIaki8zbOinvcUsIA1tRdnpazgL9f0Qy7BiE+5cuCm4cYnHJxDHx
+    Ogyw+gX9mnd3SlaxZNkSYY7tqZ+bsMqPaX9mazgV2x58HUjTWzP/PI5gse9N0bPg7vU5FnbCBH0
+    hgloLvrXajTXqxlCzh5+e2lLF4FYjtNKzqEZ8dELMqzZmiNUvA/74EgLmMiMqG1EsOY/Z37i0B7
+    UH4FDzsRE2y9kKzXzLyr++hwAavDdkbVYiuC/Uyo/ybrGwS/4vLMXy+I9w4RvCd96ulhDz6Tce
+    Q2Kg+oLIllhs9gRqyACEedtcnhHTu1mnp0=
+    - secure: K7qhmYb9ZSpxLsbcF1FBk0DLiqpHhj4C17BZrJAmTD+L3r494sbs84FWotQteaVI
+    63JmrOv1nhWW2xfHCDK/wPcXfUfwky9ZB+0WxJVNIsLj9dy3wzUvWAfSoGMoyKboGiTMD8t2uc
+    Vr5j3gCUXrx+scBaGz9U7pO8x6Y4WGwvP5q4vjI1j2BxwIvExNSTNgEugALz1GuCfnPwufOBcKM
+    xEXb5SGW41bmEXUW7QbHSkQNNC493LZ/EnS1Rth4A+PYfxcyQgcJShR2qD6LaSabl5ZRnWdkvVs
+    8EfKKaqWOZBnBbwbVP92WCIdVxwwqByph6YGtKpN71yijEE6D1yRkmRBcbS0Xogt0ugSGrRYzv
+    6+Fr8RBWgsvvLIJztu7gkc3EFgHnfN9z/P1mgb8WMcYPJPtsmw7m/phLsUrvhdma3KERX+xn9p
+    1BKVGLRozeSjYGjc2STqdKBJKDmwkIh7gQC0cqTgskxCjOnsnfAqOiOaEQf+ySLG9q0KcSRfKw
+    WWGTZMXpoNO52LBNEJWnFWxvCBb3MRX9+BFfjO8GHIaEe5WOa2cJo+XD/oDHNCFOYuXlB2lkRI
+    Sm1WlNhXpgO0xDymuuMlxKunJFkYoveAvGo5qBQVOiORghROIhHAr6w6nbxr/PL8jKx1NP1YKD
+    5mgNCEYZ3CiwOLqELbROo1P84=
+    - secure: sgMWBnaQpG22Jslh6chu9OkydlOOINNoZjSjGcFFoJLu11ZGWmtNXngZqXMXtztJ
+    qmEAg8wBVckndtkCUNSCJcpQ+ZCaaxbTUAA4J0DTVotUhI9YCnkOxltkCpvz8I0BPLj4jQPKxy
+    phsh3O3JQWDRunZ4bzOgsx3+Zo4w6ZeiAoOG0Ao7P06jtqcr4nzBwj3sbFR4HRPpgzMBNIf2I
+    eGN/jItWuLbgDSU51VGTqMwi56PlnfoC4MOfm/DPEo4C0HPcxyLi/0wKRVVH+gXWcUMBaJ4bq
+    sJ3XZ9lvez52ogNlvv3amMaEk11aqjEcgPCphm2nQI71Aja+ik2/M1JuLCW+FaZhsy560/pjF
+    f4QKRnLqsJYYYc9y5SRQYS+khkKQMm+lXGios+hwCEkttnsCn7SmzkjNvIaFFLZkeU8518gd6N
+    YnE3cpJDAG2BHZashmoqnjL9ejxaDZm1UiszygIx4TGDoW/1SbOnkl+4RutQ5fzSdF9laujqK
+    rmjLJ2ikV7UkoFl4bhfYrQ2ZXWFq1B6NbATev6idy+jsj8210Ic3H8cAaFB0yK0lOFRGD9vMZI
+    OoAEne2aGhkNmPPRERsY1GKcXzJicM6ccKDL0ZIy/xl1Vbu9L+B3CAW2y5fhReiOrpNBdwfi
+    BgFg9Qu/DraADucaZmyhqrDL06UICYI3c=
+    - secure: Yrug5ijUyY5RpMRlqv0zlh/zm08vSBOFPkLzOUSam0G/jiiu1HcLGwqAueTFYsc
+    qDEVgC3wHDiLWnqSU//eT0AFpMS4m25JPiqSuC90MEJyonRB0XhW3Fkp8PwU6NMPMdMkBfSFzI
+    5i0A+pa7yBvg30FjYrpqYNv2V1wNt4g6vkAhFdR9XeHsdP9ipkpJ7fUxGuhhJheqGcRLKZzGF
+    UTYGthKTgk70uatEQLwK2cilcqMdgONVnCUN+Dg9+Okuveqk1kxwPXJrEAOfyELuwJ8gY5G5V+
+    /3P5bXa6dIVLA7J8Nq84JY5DPONTgqKa+GB2GXPuw3nn6UIZri2bP9YHvMGYBkPxFVbKgrwkLn
+    Lw0M8Rzlyd0zet2+t4KLA4I2nVddEiCBqX1+RMQuLIZWOhqKtKTPYNWBr8XlAQi1Lyk1tukYO
+    o2lhp8g/q4ErOFPqqyyK9S0WkpSVhiTM/tZEyL3H3OaIVn/XIP9Le7x6oPomgjXkohjtx/eRn3o
+    xDKrBEitnzeD2WrtVafg/ltrcPtAjpolRwvhgGS6N0bEkfJIZFhmIFt3UDhaYvz6+irszFHSS
+    2nfJn00rY0VClW4aGNMhqIEFY5Kc+JL7AkbA2dNJG2vdhzDDYnIbMqBL1Fms6kbjS/n7hrYbF
+    CDPzQBOn3JthlNzVnEgSD95Giv2sSuE=nbCBH0hgloLvrXajTXqxlCzh5+e2lLF4FYjtNKzqEZ
+    8dELMqzZmiNUvA/74EgLmMiMqG1EsOY/Z37i0B7UH4FDzsRE2y9kKzXzLyr++hwAavDdkbVYiu
+    C/Uyo/ybrGwS/4vLMXy+I9w4RvCd96ulhDz6TceQ2Kg+oLIllhs9gRqyACEedtcnhHTu1mnp0=
   jobs:
   - USE_NETWORK=true
   - USE_NETWORK=false
