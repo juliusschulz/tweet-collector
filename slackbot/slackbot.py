@@ -8,7 +8,8 @@ oauth_token = SLACK_TOKEN
 
 def slack_text(slack_message):
     client = slack.WebClient(token=oauth_token)
-    response = client.chat_postMessage(channel='#test_room', text=slack_message)
+    response = client.chat_postMessage(channel='#test_room',
+                                       text=slack_message)
     return response
 
 
