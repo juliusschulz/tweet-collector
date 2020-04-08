@@ -23,6 +23,9 @@ env:
     - secure: CONSUMER_API_KEY='og8QYT8YBJeHSz1yNLP7BiAZb'
     - secure: CONSUMER_API_SECRET='NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg'
     - secure: ACCESS_TOKEN_SECRET='wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8'
+  jobs:
+  - USE_NETWORK=true
+  - USE_NETWORK=false
 
 # script:
 #   - bundle exec rake test
