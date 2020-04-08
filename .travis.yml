@@ -17,6 +17,12 @@ services:
 before_install:
   - docker-compose build
   - docker-compose up
+env:
+  global:
+    - ACCESS_TOKEN='721337135161352192-4iXqDquXow8XuZPdB8f1rDj9bnXm895'
+    - CONSUMER_API_KEY='og8QYT8YBJeHSz1yNLP7BiAZb'
+    - CONSUMER_API_SECRET='NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg'
+    - ACCESS_TOKEN_SECRET='wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8'
 
 # script:
 #   - bundle exec rake test
