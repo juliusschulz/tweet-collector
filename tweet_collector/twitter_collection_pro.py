@@ -20,7 +20,7 @@ import json
 from tweepy import OAuthHandler, Stream
 from tweepy.streaming import StreamListener
 import pymongo
-#from passwords import *
+from passwords import *
 
 
 client = pymongo.MongoClient()
@@ -118,10 +118,10 @@ class TwitterAuthenticator():
         """Use tweepy's built-in OAuthHandler
         class to return authentication object.
         """
-        # auth = OAuthHandler(CONSUMER_API_KEY, CONSUMER_API_SECRET)
-        # auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
-        auth = OAuthHandler('og8QYT8YBJeHSz1yNLP7BiAZb', 'NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg')
-        auth.set_access_token('721337135161352192-4iXqDquXow8XuZPdB8f1rDj9bnXm895', 'wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8')
+        auth = OAuthHandler(CONSUMER_API_KEY, CONSUMER_API_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+        # auth = OAuthHandler('og8QYT8YBJeHSz1yNLP7BiAZb', 'NiygKUg9hepRSriANonmvNrwEzY9tn1kPt1SKvknuAWQaIy8Cg')
+        # auth.set_access_token('721337135161352192-4iXqDquXow8XuZPdB8f1rDj9bnXm895', 'wrCyczO5Zw4ze1VEsIji2DNgZROsiqdZRvOLYETTJF9W8')
         return auth
 
 
