@@ -48,6 +48,4 @@ env:
     CDPzQBOn3JthlNzVnEgSD95Giv2sSuE=nbCBH0hgloLvrXajTXqxlCzh5+e2lLF4FYjtNKzqEZ
     8dELMqzZmiNUvA/74EgLmMiMqG1EsOY/Z37i0B7UH4FDzsRE2y9kKzXzLyr++hwAavDdkbVYiu
     C/Uyo/ybrGwS/4vLMXy+I9w4RvCd96ulhDz6TceQ2Kg+oLIllhs9gRqyACEedtcnhHTu1mnp0=
-  jobs:
-  - USE_NETWORK=true
-  - USE_NETWORK=false
+  
