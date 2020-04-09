@@ -50,8 +50,10 @@ def transform_data(tweet):
         vscore_list.append(vscore['compound'])
         longitude_list.append(longitude)
         latitude_list.append(latitude)
-    df = pd.DataFrame(list(zip(time_list, text_list, vscore_list, longitude_list, latitude_list)),
-                   columns=['time','text', 'v_score','longitude', 'latitude'])
+    df = pd.DataFrame(list(zip(time_list, text_list,
+                           vscore_list, longitude_list, latitude_list)),
+                      columns=['time', 'text', 'v_score',
+                               'longitude', 'latitude'])
     return df
 
 
@@ -65,13 +67,8 @@ def write_to_sql(x):
 
 
 while True:
-    # try:
-    print('running')
-    # rather than 5555
     pg = create_engine("postgres://postgres:postgres@postgresdb:5432/tweetdb")
     x = extract_new_tweets()
     time.sleep(10)
     x = transform_data(x)
     write_to_sql(x)
-    # except Exception, e:
-        # logging.critical('ERROR' + str(e))
