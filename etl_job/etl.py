@@ -20,7 +20,8 @@ def extract_new_tweets():
     client = pymongo.MongoClient(host="mongodb", port=27017)
     tweet = client.tweet
     tweets = tweet.tweet
-    tweet_list = [tweet for tweet in tweets.find({"tweet_location": {"$exists": "true", "$ne": []}})]
+    tweet_list = [tweet for tweet in tweets.find({"tweet_location": {"$exists":
+                  "true", "$ne": []}})]
     tweets.drop()
     return tweet_list
 
