@@ -193,6 +193,7 @@ class TwitterStreamer():
     def stream_tweets(self, limit, callback):
         '''
             Primary function that wraps up all preceeding code into one method.
+        Primary function that wraps up all preceeding code into one method.
         '''
         listener = TwitterListener(limit, callback)
         auth = self.twitter_authenticator.authenticate()
