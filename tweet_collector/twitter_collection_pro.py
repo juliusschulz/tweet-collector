@@ -149,7 +149,8 @@ class TwitterListener(StreamListener):
 
     def on_data(self, data):
 
-        '''DEFAULT method inherited from StreamListener class.
+        '''
+        DEFAULT method inherited from StreamListener class.
            This is the main function of the Twitter Streamer class.
            It defines what should be done with each incoming streamed tweet
            as it
@@ -183,7 +184,7 @@ class TwitterListener(StreamListener):
 
 class TwitterStreamer():
     '''
-       Class containing the primary method / functionality of the script.
+    Class containing the primary method / functionality of the script.
     '''
 
     def __init__(self, keywords):
@@ -192,7 +193,6 @@ class TwitterStreamer():
 
     def stream_tweets(self, limit, callback):
         '''
-            Primary function that wraps up all preceeding code into one method.
         Primary function that wraps up all preceeding code into one method.
         '''
         listener = TwitterListener(limit, callback)
