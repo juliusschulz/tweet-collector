@@ -12,7 +12,6 @@ A Dockerized Data Pipeline that analyzes the sentiment of tweets.
 git clone https://github.com/juliusschulz/tweet-collector.git
 
 pip install -r requirements.txt
-
 ```
 ## Usage
 ```
