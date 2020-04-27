@@ -29,3 +29,7 @@ docker-compose up
      - store cleaned tweets in an SQL Database
 3. slackbot
      - grab tweets from SQL Database that can be posted on slack
+
+## To-Do
+- [ ] Tests
+- [ ] requirements.txt
